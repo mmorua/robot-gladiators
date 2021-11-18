@@ -11,6 +11,9 @@ var enemyHealth = 50;
 var enemyAttack = 12;
 
 var fight = function(enemyName) {
+// Repeat and execute as long as the enemy-robot is alive
+while(enemyHealth > 0) {
+
 // Alert players that they are starting the round
   window.alert("Welcome to Robot Gladiators!");
 
@@ -64,8 +67,12 @@ else {
     window.alert("You need to choose a valid option. Try again!");
 }
 }
+}
 
 // Run fight function to start game
 for(var i = 0; i < enemyName.length; i++) {
-    fight(enemyName[i]);
+    var pickedEnemyName = enemyName[i];
+    enemyHealth = 50;
+// Call fight function with enemy robot
+    fight(pickedEnemyName);
 }
